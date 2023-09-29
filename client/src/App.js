@@ -56,9 +56,11 @@ class App extends Component {
       </div>
     );
 }
+
+// To use await, the function that is after the await needs to return a new Promise.
+// Not sure how else it works... need to work on it....
 static readUploadedFileAsText(inputFile) {
   const fr = new FileReader();
-
   return new Promise((resolve, reject) => {
     fr.onerror = () => {
       fr.abort();
